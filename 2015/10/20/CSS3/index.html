@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2015-10-20</span>
-            <span class="time">19:29:47</span>
+            <span class="time">20:22:30</span>
           </span>
           
         </div>
@@ -109,7 +109,90 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <p>```<br>    CSS3<br>    CSS3属性（内核前缀）<br>    Mozilla 内核   css前缀-moz;<br>    WebKit  内核   css前缀-webkit ;（谷歌已换用blink内核）<br>    Opera   内核   css前缀 -o ;    （欧朋已换用blink内核）<br>    Trident 内核   css前缀 -ms ;<br>    CSS3新属性：<br>    1）边框<br>    ① border-colors  </p>
+<pre><code>相关属性   border-top-colors  border-right-colors  border-bottom-colors  border-left-colors 
+
+② border-image  ：
+/*border-image: url(&apos;border-image.png&apos;) 30 30 repeated;简写形式*/
+stretch 拉伸方式来填充边框背景图   
+repeat 平铺 图片碰到边界时超出截断  
+round 平铺，图片会工具边框的尺寸动态调整图片大小直至刚 好铺满整个边框
+
+border-radius
+
+阴影
+1.文本阴影 text-shadow（不需要判断浏览器）
+
+text-shadow:2px 3px 2px #000;
+文字阴影的结构是按照以下顺序：X--偏移，Y--偏移，模糊，和颜色; 
+text-shadow:-2px -3px 2px rgba(0, 118, 160, .25); 
+设置为负值，X -偏移阴影转移到左侧。设置为负值偏移Y -转移阴影顶端。颜色可以用RGBA值。 
+text-shadow:0px 1px 0px #fff,0px -p 1 x 0px #000；
+文字阴影的列表（以逗号分隔）,1px的顶部和底部1px的阴影。
+text-shadow： 水平偏移量 垂直偏移量 阴影模糊值 颜色，
+            水平偏移量 垂直偏移量 阴影模糊值 颜色； （多个阴影用，隔开）
+eg：
+.con2 p { 
+     font-size: 90px; 
+     color:#fff; 
+     text-shadow: -1px -1px 1px rgba(0,0,255,1), 
+                  -2px -2px 1px rgba(0,0,254,0.5), 
+                  -6px -6px 10px rgba(0,0,252,0.2); 
+}
+
+盒阴影 box-shadow（不需要判断浏览器）
+盒阴影的使用语法结构与文本阴影类似，如box-shadow: 5px 5px 5px rgba(255,15,255,0.5);
+但是，盒阴影多了个属性： 外延值， inset ，
+   如box-shadow: 5px 5px 25px rgba(0,0,255,0.5) inset;
+   ## 补充个知识点：
+background: transparent ; 等价  background:rgba(0,0,0,0);
+color: transparent ; 等价  color:rgba(0,0,0,0);
+
+CSS3 过渡  trabsition
+参与过渡的属性、过渡时间、过渡方式（动画类型） 延迟时间 【需要写前缀】
+一般情况下，transition添加在基本效果上，而不是hover效果中。 css原状态和hover状态设置为两种不同的样式，然后通过CSS3过渡进行‘渐变’处理 padding、color所有浏览器都支持渐变
+transition 属性是一个简写属性，用于设置四个过渡属性：
+
+transition-property  哪个属性实现过渡如：width
+transition-duration  完成过渡效果需要多少秒/毫秒
+transition-timing-function  速度效果的运动曲线，如linear 、ase-in 、ease 、 ease-out 、ease-in-out 、 cube-bezier（贝塞尔曲线） 
+transition-delay  规定过渡开始前等待几秒
+
+简写：transition：width 2s ease；
+
+ CSS3 动画  animation
+animation 基本参数与 transition 完全相同，第一个参数表示的是调用哪个动画  infinite 表示无限循环
+.wrap {
+   height:100px; 
+   margin:10px; 
+    -webkit-animation:colorChange 10s linear 1.5s infinite; 
+} 
+@-webkit-keyframes colorChange { 
+      0%{ background:#f00;} 
+      10%{ background:#ff0;} 
+}
+animation属性值：
+规定动画。
+所有动画属性的简写属性，除了animation-play-state 属性。
+规定 @keyframes 动画的名称。
+规定动画完成一个周期所花费的秒或毫秒。默认是 0。
+animation-timing-function
+规定动画的速度曲线。默认是 &quot;ease&quot;。
+规定动画何时开始。默认是 0。
+animation-iteration-count
+规定动画被播放的次数。默认是 1。
+规定动画是否在下一周期逆向地播放。默认是 &quot;normal&quot; 。逆向 alternate
+规定动画是否正在运行或暂停。默认是 &quot; running &quot;，暂停时 pause
+规定对象动画时间之外的状态。
+
+CSS3过渡与动画的区别：
+ transition  animation     
+animation 多两个参数，循环和动画的方式
+transition不能自行触发，通过hover等动作或结合JS进行触发。anmiation可以自行运行。
+transition可控性较弱，只能指定起始状态和结束状态，而animation可以定义多个关键帧。
+动画在运行结束之后，需要回到初始状态
+transition的作用，可以用一句话来概括，‘平滑’改变CSS样式
+</code></pre>
         </div>
       </div>
     </div>
