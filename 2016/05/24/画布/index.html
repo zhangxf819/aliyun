@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-05-24</span>
-            <span class="time">09:55:32</span>
+            <span class="time">10:24:30</span>
           </span>
           
         </div>
@@ -109,7 +109,14 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <h2 id="画布"><a href="#画布" class="headerlink" title="画布"></a>画布</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">创建canvas画布</div><div class="line"></div><div class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot;&gt;&lt;/canvas&gt;</div><div class="line">canvas 元素本身是没有绘图能力的。所有的绘制工作必须在 JavaScript 内部完成</div><div class="line">var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">var cxt=c.getContext(&quot;2d&quot;);</div><div class="line">下面的两行代码绘制一个红色的矩形：</div><div class="line">cxt.fillStyle=&quot;#FF0000&quot;;</div><div class="line">cxt.fillRect(0,0,150,75);</div><div class="line">上面的 fillRect 方法拥有参数 (0,0,150,75)。</div><div class="line">意思是：在画布上绘制 150x75 的矩形，从左上角开始 (0,0)</div><div class="line"></div><div class="line">画一个圆</div><div class="line">&lt;canvas id=&quot;myCanvas&quot; width=&quot;200&quot; height=&quot;100&quot;style=&quot;border:1px solid #c3c3c3;&quot;&gt;</div><div class="line">	你的浏览器不支持该属性；</div><div class="line">```python</div><div class="line">	&lt;/canvas&gt;</div><div class="line">	&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">		var c=document.getElementById(&quot;myCanvas&quot;);</div><div class="line">		var cxt=c.getContext(&quot;2d&quot;);</div><div class="line">		cxt.fillStyle=&quot;#FF0000&quot;;</div><div class="line">		cxt.beginPath();</div><div class="line">		cxt.arc(70,18,15,0,Math.PI*2,true);</div><div class="line">		cxt.closePath();</div><div class="line">		cxt.fill();</div><div class="line">	&lt;/script&gt;</div></pre></td></tr></table></figure>
+<pre><code>渐变色
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;"&gt;</div><div class="line">你的浏览器不支持该属性；</div><div class="line">&lt;/canvas&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var c=document.getElementById("myCanvas");</div><div class="line">	var cxt=c.getContext("2d");</div><div class="line">	var grd=cxt.createLinearGradient(0,0,175,50);</div><div class="line">	grd.addColorStop(0,"#FF0000");</div><div class="line">	grd.addColorStop(1,"#00FF00");</div><div class="line">	cxt.fillStyle=grd;</div><div class="line">	cxt.fillRect(0,0,175,50);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+
+把一幅图像放置到画布上
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;"&gt;</div><div class="line">你的浏览器不支持该属性；</div><div class="line">&lt;/canvas&gt;</div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">	var c=document.getElementById("myCanvas");</div><div class="line">	var cxt=c.getContext("2d");</div><div class="line">	var img=new Image()</div><div class="line">	img.src="/i/eg_flower.png"</div><div class="line">	cxt.drawImage(img,0,0);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</code></pre><p>```    </p>
+
         </div>
       </div>
     </div>
