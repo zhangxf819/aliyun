@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-02-20</span>
-            <span class="time">09:51:32</span>
+            <span class="time">09:55:33</span>
           </span>
           
         </div>
@@ -109,28 +109,14 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <pre><code>$scope.style = {color:&apos;red&apos;};　
-&lt;div ng-style=&quot;{color:&apos;red&apos;}&quot;&gt;ng-style测试&lt;/div&gt;
-&lt;div ng-style=&quot;style&quot;&gt;ng-style测试&lt;/div&gt;
-ng-show、ng-hide、ng-switch
+          <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$scope.style = &#123;color:'red'&#125;;　</div><div class="line">&lt;div ng-style="&#123;color:'red'&#125;"&gt;ng-style测试&lt;/div&gt;</div><div class="line">&lt;div ng-style="style"&gt;ng-style测试&lt;/div&gt;</div></pre></td></tr></table></figure>
+<pre><code>` ng-show ` 、` ng-hide` 、` ng-switch `
 对于比较常用的元素显隐控制，ng 也做了封装，ng-show 和 ng-hide 的值为 boolean 类型的表达式，当值为 true 时，对应的 show 或 hide 生效。框架会用 display:block 和 display:none 来控制元素的显隐。
-示例：
-&lt;div ng-app=&quot;&quot;&gt;
-    &lt;div ng-show=&quot;true&quot;&gt;1&lt;/div&gt;
-    &lt;div ng-show=&quot;false&quot;&gt;2&lt;/div&gt;
-    &lt;div ng-hide=&quot;true&quot;&gt;3&lt;/div&gt;
-    &lt;div ng-hide=&quot;false&quot;&gt;4&lt;/div&gt;
-&lt;/div&gt;
-后一个 ng-switch 是根据一个值来决定哪个节点显示，其它节点移除：
-&lt;div ng-init=&quot;a=2&quot;&gt;
-    &lt;ul ng-switch on=&quot;a&quot;&gt;
-        &lt;li ng-switch-when=&quot;1&quot;&gt;1&lt;/li&gt;
-        &lt;li ng-switch-when=&quot;2&quot;&gt;2&lt;/li&gt;
-        &lt;li ng-switch-default&gt;other&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-
-事件指令
+示例:
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;div ng-app=""&gt;</div><div class="line">	&lt;div ng-show="true"&gt;1&lt;/div&gt;</div><div class="line">	&lt;div ng-show="false"&gt;2&lt;/div&gt;</div><div class="line">	&lt;div ng-hide="true"&gt;3&lt;/div&gt;</div><div class="line">	&lt;div ng-hide="false"&gt;4&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<pre><code>后一个 ng-switch 是根据一个值来决定哪个节点显示，其它节点移除：
+</code></pre><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;div ng-init="a=2"&gt;</div><div class="line">    &lt;ul ng-switch on="a"&gt;</div><div class="line">	    &lt;li ng-switch-when="1"&gt;1&lt;/li&gt;</div><div class="line">	    &lt;li ng-switch-when="2"&gt;2&lt;/li&gt;</div><div class="line">	    &lt;li ng-switch-default&gt;other&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<pre><code>事件指令
 
 事件相关的指令有：
 
@@ -146,16 +132,11 @@ ng-mouseup
 ng-submit
 对于事件对象本身，在函数调用时可以直接使用 $event 进行传递：
 
-&lt;p ng-click=&quot;click($event)&quot;&gt;点击&lt;/p&gt;
-&lt;p ng-click=&quot;click($event.target)&quot;&gt;点击&lt;/p&gt;
-
-$scope.click = function($event){
-         alert($event.target);
-         //……………………
-}　　
-表单指令
-
-表单控件类的模板指令，最大的作用是它预定义了需要绑定的数据的格式。这样，就可以对于既定的数据进行既定的处理。
+` &lt;p ng-click=&quot;click($event)&quot;&gt;点击&lt;/p&gt; `
+` &lt;p ng-click=&quot;click($event.target)&quot;&gt;点击&lt;/p&gt; `
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$scope.click = function($event)&#123;</div><div class="line">         alert($event.target);</div><div class="line">         //……………………</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>　<br>    表单指令</p>
+<pre><code>表单控件类的模板指令，最大的作用是它预定义了需要绑定的数据的格式。这样，就可以对于既定的数据进行既定的处理。
 
 form
 
