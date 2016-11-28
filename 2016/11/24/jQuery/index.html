@@ -101,7 +101,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2016-11-24</span>
-            <span class="time">10:24:30</span>
+            <span class="time">13:37:24</span>
           </span>
           
         </div>
@@ -109,7 +109,162 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <h2 id="jquery"><a href="#jquery" class="headerlink" title="jquery"></a>jquery</h2><p>```<br>    jQuery是一个JavaScript函数库。目前jQuery兼容于所有主流浏览器, 包括Internet Explorer 6!</p>
+<pre><code>下载 jQuery
+有两个版本的 jQuery 可供下载：
+Production version - 用于实际的网站中，已被精简和压缩。
+Development version - 用于测试和开发（未压缩，是可读的代码）
+以上两个版本都可以从 jquery.com 中下载。
+
+基本操作
+公用 toggle切换
+隐藏与显示    hide show
+淡入与淡出    fadein  fadeOut
+滑动   slideDown  slideUp
+
+动画
+$(selector).animate({params},speed,callback);
+必需的 params 参数定义形成动画的 CSS 属性。
+可选的 speed 参数规定效果的时长。它可以取以下值：&quot;slow&quot;、&quot;fast&quot; 或毫秒。
+可选的 callback 参数是动画完成后所执行的函数名称。
+请注意，
+（1）生成动画的过程中可同时使用多个属性
+（2）需要在值的前面加上 += 或 -=
+（3）可以把属性的动画值设置为 &quot;show&quot;、&quot;hide&quot; 或 &quot;toggle&quot;
+（4）默认地，jQuery 提供针对动画的队列功能
+    $(&quot;button&quot;).click(function(){
+          var div=$(&quot;div&quot;);
+          div.animate({height:&apos;300px&apos;,opacity:&apos;0.4&apos;},&quot;slow&quot;);
+          div.animate({width:&apos;300px&apos;,opacity:&apos;0.8&apos;},&quot;slow&quot;);
+          div.animate({height:&apos;100px&apos;,opacity:&apos;0.4&apos;},&quot;slow&quot;);
+          div.animate({width:&apos;100px&apos;,opacity:&apos;0.8&apos;},&quot;slow&quot;);
+    });
+（5）stop()   停止动画
+
+jquery  html
+获取内容  text() - 设置或返回所选元素的文本内容
+    html() - 设置或返回所选元素的内容（包括 HTML 标记）
+    val() - 设置或返回表单字段的值
+&lt;script&gt;
+    $(document).ready(function(){
+      $(&quot;button&quot;).click(function(){
+        alert(&quot;值为: &quot; + $(&quot;#test&quot;).val());
+      });
+    });
+    &lt;/script&gt;
+    &lt;body&gt;
+    &lt;p&gt;名称: &lt;input type=&quot;text&quot; id=&quot;test&quot; value=&quot;菜鸟教程&quot;&gt;&lt;/p&gt;
+    &lt;button&gt;显示值&lt;/button&gt;
+    &lt;/body&gt;
+jQuery attr() 方法用于获取属性值
+
+设置
+&lt;p id=&quot;test1&quot;&gt;这是一个段落。&lt;/p&gt;
+&lt;p id=&quot;test2&quot;&gt;这是另外一个段落。&lt;/p&gt;
+&lt;p&gt;输入框: &lt;input type=&quot;text&quot; id=&quot;test3&quot; value=&quot;菜鸟教程&quot;&gt;&lt;/p&gt;
+&lt;button id=&quot;btn1&quot;&gt;设置文本&lt;/button&gt;
+&lt;button id=&quot;btn2&quot;&gt;设置 HTML&lt;/button&gt;
+&lt;button id=&quot;btn3&quot;&gt;设置值&lt;/button&gt;
+&lt;script&gt;
+    $(document).ready(function(){
+          $(&quot;#btn1&quot;).click(function(){
+                $(&quot;#test1&quot;).text(&quot;Hello world!&quot;);
+          });
+          $(&quot;#btn2&quot;).click(function(){
+                $(&quot;#test2&quot;).html(&quot;&lt;b&gt;Hello world!&lt;/b&gt;&quot;);
+          });
+          $(&quot;#btn3&quot;).click(function(){
+                $(&quot;#test3&quot;).val(&quot;RUNOOB&quot;);
+          });
+    });
+&lt;/script&gt;
+
+添加
+append() - 在被选元素的结尾插入内容
+    $(&quot;p&quot;).append(&quot;追加文本&quot;);
+prepend() - 在被选元素的开头插入内容
+    $(&quot;p&quot;).prepend(&quot;在开头追加文本&quot;);
+after() - 在被选元素之后插入内容
+    $(&quot;img&quot;).after(&quot;在后面添加文本&quot;);
+before() - 在被选元素之前插入内容
+    $(&quot;img&quot;).before(&quot;在前面添加文本&quot;);
+
+删除
+remove() - 删除被选元素（及其子元素）remove() 方法也可接受一个参数，允许您对被删元素进行过滤
+    $(&quot;p&quot;).remove(&quot;.italic&quot;);
+empty() - 从被选元素中删除子元素
+    $(&quot;#div1&quot;).remove();
+    $(&quot;#div1&quot;).empty();
+
+css类
+addClass() - 向被选元素添加一个或多个类
+removeClass() - 从被选元素删除一个或多个类
+toggleClass() - 对被选元素进行添加/删除类的切换操作
+css() - 设置或返回样式属性
+
+尺寸
+&lt;script&gt;
+$(document).ready(function(){
+      $(&quot;button&quot;).click(function(){
+        var txt=&quot;&quot;;
+        txt+=&quot;div 宽度: &quot; + $(&quot;#div1&quot;).width() + &quot;&lt;/br&gt;&quot;;
+        txt+=&quot;div 高度: &quot; + $(&quot;#div1&quot;).height() + &quot;&lt;/br&gt;&quot;;
+        txt+=&quot;div 宽度，包含内边距: &quot; + $(&quot;#div1&quot;).innerWidth() + &quot;&lt;/br&gt;&quot;;
+        txt+=&quot;div 高度，包含内边距: &quot; + $(&quot;#div1&quot;).innerHeight();
+        txt+=&quot;div 宽度，包含内边距和边框: &quot; + $(&quot;#div1&quot;).outerWidth() + &quot;&lt;/br&gt;&quot;;
+        txt+=&quot;div 高度，包含内边距和边框: &quot; + $(&quot;#div1&quot;).outerHeight();
+        $(&quot;#div1&quot;).html(txt);
+      });
+});
+&lt;/script&gt;
+
+
+遍历
+parent() 方法返回被选元素的直接父元素。
+该方法只会向上一级对 DOM 树进行遍历
+parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素 (&lt;html&gt;)
+parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素
+$(document).ready(function(){
+      $(&quot;span&quot;).parentsUntil(&quot;div&quot;);
+});
+children() 方法返回被选元素的所有直接子元素。
+该方法只会向下一级对 DOM 树进行遍历
+find() 方法返回被选元素的后代元素，一路向下直到最后一个后代
+siblings() 方法返回被选元素的所有同胞元素
+next() 方法返回被选元素的下一个同胞元素
+nextAll() 方法返回被选元素的所有跟随的同胞元素
+nextUntil() 方法返回介于两个给定参数之间的所有跟随的同胞元素
+注意
+prev(), prevAll() 以及 prevUntil() 方法的工作方式与上面的方法类似，只不过方向相反而已：它们返回的是前面的同胞元素（在 DOM 树中沿着同胞元素向后遍历，而不是向前）
+
+first() 方法返回被选元素的首个元素
+last() 方法返回被选元素的最后一个元素
+eq() 方法返回被选元素中带有指定索引号的元素。
+索引号从 0 开始，因此首个元素的索引号是 0 而不是 1
+filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+not() 方法返回不匹配标准的所有元素
+
+
+Ajax
+AJAX = 异步 JavaScript 和 XML（Asynchronous JavaScript and XML）
+function loadXMLDoc(){
+    var xmlhttp;
+    if (window.XMLHttpRequest){
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xmlhttp=new XMLHttpRequest();
+    }else{
+        // IE6, IE5 浏览器执行代码
+        xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+    }xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 &amp;&amp; xmlhttp.status==200){
+            document.getElementById(&quot;myDiv&quot;).innerHTML=xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open(&quot;GET&quot;,&quot;/try/ajax/ajax_info.txt&quot;,true);
+    xmlhttp.send();
+    }
+&lt;/script&gt;
+</code></pre>
         </div>
       </div>
     </div>
